@@ -76,6 +76,8 @@ def load_route_points(data_dir, waypoints):
     rpoints = {}
     for wp in waypoints:
         if ((current_wp + 1) < total_wp):
+            if rpoint_count > 20:
+                 return rpoints #Temp Hack while I deal with limit
             lat1 = waypoints[current_wp]['LatitudeDegrees']
             lon1 = waypoints[current_wp]['LongitudeDegrees']
             lat2 = waypoints[current_wp+1]['LatitudeDegrees']
